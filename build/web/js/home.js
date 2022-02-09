@@ -4,6 +4,15 @@
  * and open the template in the editor.
  */
 
+
+function homeLoader(){
+    var xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("ajax_login").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "home.fin?cmdAction=getHome", true);
+  xhttp.send();
+}
 function loginLoader(){
     var xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
@@ -23,3 +32,18 @@ function registerLoader(){
   xhttp.send();
 }
 
+
+function inputFade() {
+    const inputs = document.querySelectorAll(".input-field");
+
+    inputs.forEach((inp) => {
+        inp.addEventListener("focus", () => {
+            inp.classList.add("active");
+        });
+        inp.addEventListener("blur", () => {
+            if (inp.value != "")
+                return;
+            inp.classList.remove("active");
+        });
+    });
+}

@@ -11,21 +11,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Food Website Design Tutorial</title>
+    <title>Loan Management Application</title>
 
     
     <!-- font awesome cdn link  -->
     <script src="https://kit.fontawesome.com/6af5f97006.js" crossorigin="anonymous"></script>
     <!-- bootstrap cdn link -->
     <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
- 
    
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/register.css" />
+ 
 </head>
-<body>
+<body >
     
 <!-- header section starts-->
 <header>
@@ -33,10 +32,10 @@
     <a href="#" class="logo"><i class="fas fa-coins"></i>Loan.</a>
     
     <nav class="navbar">
-        <a class="active" href="#home" id="homeAnchor">Home</a>
-        <a href="#service" id="homeAnchor1">Services</a>
-        <a href="#about" id="homeAnchor2">About</a>
-        <a href="#contact" id="homeAnchor3">Contact</a>
+        <a class="active" href="#home" id="homeAnchor"  >Home</a>
+        <a href="#service" id="">Services</a>
+        <a href="#about" id="">About</a>
+        <a href="#contact" id="">Contact</a>
       
     </nav>
     
@@ -48,6 +47,7 @@
     </div>
 
 </header>
+<!-- header section ends-->
 <div id="ajax_login">
         
 </div>
@@ -57,7 +57,7 @@
 <div id="ajax_home">
 <!-- header section ends-->
 
-<!-- home form  -->
+
 <section id="home" class="d-flex align-items-center">
 
     <div class="container">
@@ -66,7 +66,7 @@
           <h1>Loan Management System</h1>
           <h2>Help automate the entire loan lifecycle </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn" onclick="registerLoader()">Get Started</a>
         </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -76,9 +76,7 @@
     </div>
 
   </section>
-  <!-- End home -->
-
-<!-- Services Section start -->
+ 
 <section class="services" id="service">
 
     <h3 class="sub-heading"><b> our Services </b></h3>
@@ -131,9 +129,7 @@
     
 </section>
 
-<!-- Services section ends -->
 
-<!-- about us section starts  -->
 
 <section class="about" id="about">
 
@@ -189,10 +185,6 @@
 
 </section>
 
-<!-- about section ends -->
-
-
-<!-- order section starts  -->
 
     <section class="contact" id="contact">
 
@@ -236,9 +228,7 @@
 
     </section>
 
-<!-- order section ends -->
-
-<!-- footer section starts  -->
+  
 
 <section class="footer">
 
@@ -279,40 +269,45 @@
     <div class="credit"> copyright @ 2021 by <span>mr. web designer</span> </div>
 
 </section>
-
-<!-- footer section ends -->
-
-
 </div>
+<script>
+    document.querySelectorAll(".input-field").forEach((inp) => {
+  inp.addEventListener("focus", () => {
+    inp.classList.add("active");
+  });
+  inp.addEventListener("blur", () => {
+    if (inp.value != "") return;
+    inp.classList.remove("active");
+  });
+});
+    </script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- custom js file link  -->
-<script type="text/javascript"src="js/script.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/common/common_functions.js"></script>
 <script type="text/javascript" src="js/common/validate.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script>
-//$( "#loginAnchor" ).click(function() {
-//  $( "#ajax_home" ).hide();
-//  $( "#ajax_register" ).hide();
-//
-//});
-//
-//
-//$( "#registerAnchor" ).click(function() {
-//  $( "#ajax_home" ).hide();
-//  $( "#ajax_login" ).hide();
-//
-//});
-////
-//$( "#homeAnchor").click(function() {
-//  $( "#ajax_login" ).hide();
-//  $( "#ajax_register" ).hide();
-//
-//});
+$( "#registerAnchor" ).click(function() {
+  $( "#ajax_home" ).hide();
+  $( "#ajax_login" ).hide();
+  $( "#ajax_register" ).show();
 
+});
+
+$( "#homeAnchor" ).click(function() {
+  $( "#ajax_register" ).hide();
+   $( "#ajax_login" ).hide();
+   $( "#ajax_home" ).show();
+
+});
+
+$( "#loginAnchor" ).click(function() {
+  $( "#ajax_register" ).hide();
+  $( "#ajax_login" ).show();
+   $( "#ajax_home" ).hide();
+
+});
 </script>
 </body>
 </html>

@@ -7,9 +7,12 @@
 function checkCredentials(){
     
     var result = validate_mandatory('email','Email') && validate_mandatory('password', 'Password')
-    
     if(result){
-        // submit form data
+        // submit data to server using ajax
+        var oForm = document.getElementById('login_frm');
+       
+        var params = getAllFormData(oForm);
+        alert(params);
     }
     return false;
 }
