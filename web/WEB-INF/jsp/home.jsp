@@ -43,14 +43,15 @@
         <i class="fas fa-bars" id="menu-bars"></i>
         
         <a href="#" class="fas fa-user-plus" onclick="registerLoader()" id="registerAnchor"></a>
-        <a href="#" class="fa fa-sign-in" aria-hidden="true"  onclick="loginLoader()" id="loginAnchor"></a>
+        <a href="#" class="fa fa-sign-in" aria-hidden="true"  onclick="loginLoader()" id="loginAnchor" ></a>
     </div>
 
 </header>
 <!-- header section ends-->
 <div id="ajax_login">
-        
+   
 </div>
+  <div id="loginstatus"></div>   
 <div id="ajax_register">
         
 </div>
@@ -288,26 +289,26 @@
 <script type="text/javascript" src="js/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script>
-$( "#registerAnchor" ).click(function() {
-  $( "#ajax_home" ).hide();
-  $( "#ajax_login" ).hide();
-  $( "#ajax_register" ).show();
-
-});
-
-$( "#homeAnchor" ).click(function() {
-  $( "#ajax_register" ).hide();
-   $( "#ajax_login" ).hide();
-   $( "#ajax_home" ).show();
-
-});
-
-$( "#loginAnchor" ).click(function() {
-  $( "#ajax_register" ).hide();
-  $( "#ajax_login" ).show();
-   $( "#ajax_home" ).hide();
-
-});
+//$( "#registerAnchor" ).click(function() {
+//  $( "#ajax_home" ).hide();
+//  $( "#ajax_login" ).hide();
+//  $( "#ajax_register" ).show();
+//
+//});
+//
+//$( "#homeAnchor" ).click(function() {
+//  $( "#ajax_register" ).hide();
+//   $( "#ajax_login" ).hide();
+//   $( "#ajax_home" ).show();
+//
+//});
+//
+//$( "#loginAnchor" ).click(function() {
+//  $( "#ajax_register" ).hide();
+//  $( "#ajax_login" ).show();
+//   $( "#ajax_home" ).hide();
+//
+//});
 </script>
 </body>
 </html>

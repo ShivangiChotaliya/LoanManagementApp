@@ -111,3 +111,40 @@ function getAllFormData(oForm,isNew) {
     }
     return aParams.join("&");
 }
+
+ function getSynchronousData(dataSource, params, destination)
+    {
+       
+        var XMLHttpRequestObject =false;
+
+        if(window.XMLHttpRequest)
+        {
+                XMLHttpRequestObject = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject)
+        {
+                XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        if(XMLHttpRequestObject)
+        {
+           
+            var obj = document.getElementById(destination);
+         
+            //obj.innerHTML = '<center><div><img src="images/loading.gif"  width="75" height="75"><br><font color=darkblue><b>Loading Page... </b></font></div></center>';
+            obj.innerHTML = 'Loading....';
+            XMLHttpRequestObject.open("POST",dataSource,false);
+            XMLHttpRequestObject.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+            XMLHttpRequestObject.send(params);
+
+            if(XMLHttpRequestObject.readyState == 4)
+            { 
+                if(XMLHttpRequestObject.status == 200){                      
+                    obj.innerHTML = XMLHttpRequestObject.responseText;                                   
+                }
+                else{                     
+                    obj.innerHTML = 'some problem arise';              
+                }            
+            }
+        }
+    }

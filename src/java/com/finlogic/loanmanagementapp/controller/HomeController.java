@@ -5,6 +5,9 @@
  */
 package com.finlogic.loanmanagementapp.controller;
 
+import com.finlogic.loanmanagementapp.bean.LoginFormBean;
+import com.finlogic.loanmanagementapp.datamanager.LoginDataManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,6 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("home.fin")
 public class HomeController {
 
+    @Autowired
+    LoginDataManager loginDataManager;
+    
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")
     public ModelAndView getHome(){
         ModelAndView mv = new ModelAndView("home");
@@ -48,6 +54,15 @@ public class HomeController {
     public ModelAndView getforgotPassword() {
         ModelAndView mv = new ModelAndView("home/page");
         mv.addObject("process", "forgotPassword");
+        return mv;
+    }
+    
+    
+    // dependency injection
+    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkCredentials")
+    public ModelAndView checkCredentials(LoginFormBean loginFormBean) {
+        ModelAndView mv = new ModelAndView("status");
+        mv.addObject("status", loginDataManager.checkEmail(loginFormBean.getEmail()));
         return mv;
     }
 }

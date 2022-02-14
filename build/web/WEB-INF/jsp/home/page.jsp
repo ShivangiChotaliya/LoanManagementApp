@@ -232,7 +232,7 @@
             <div class="box_box">
                 <div class="inner-box">
                     <div class="forms-wrap">
-                        <form action="" autocomplete="off" id="login_frm" >
+                        <form action="" autocomplete="off" id="login_frm"  >
                             <div class="logo_page">
                                 <i class="fas fa-coins"></i>
                                 <h4>Loan</h4>
@@ -271,6 +271,7 @@
                 </div>
             </div>
         </main>
+       
     </c:if>
     <c:if test="${process eq 'register'}">
         <main>

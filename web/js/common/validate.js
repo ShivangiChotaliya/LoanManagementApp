@@ -14,3 +14,23 @@ function validate_mandatory(elementId, caption){
     }
     return true;
 }
+
+function check_EmailID(fieldname,msg)
+{  
+    
+    var regemail=/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    //var regemail=/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    var fname=fieldname;
+    var fvalue=fieldname.value;
+
+    if((fvalue != "") && (! regemail.test(fvalue)))
+    {
+            alert(msg);
+            //alert(fvalue);
+            fname.focus();
+            return false;
+    }
+    return true;
+}
+
+
