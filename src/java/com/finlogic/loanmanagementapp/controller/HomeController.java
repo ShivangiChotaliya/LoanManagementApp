@@ -8,6 +8,7 @@ package com.finlogic.loanmanagementapp.controller;
 import com.finlogic.loanmanagementapp.bean.LoginFormBean;
 import com.finlogic.loanmanagementapp.datamanager.LoginDataManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
     @Autowired
+    @Qualifier("api")
     LoginDataManager loginDataManager;
     
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")

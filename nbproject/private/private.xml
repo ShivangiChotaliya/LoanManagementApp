@@ -5,14 +5,8 @@
         <group>
             <file>file:/E:/Spring-Loan/LoanManagementApp/src/java/com/finlogic/loanmanagementapp/datamanager/impl/LoginDataManagerImpl.java</file>
             <file>file:/E:/Spring-Loan/LoanManagementApp/src/java/com/finlogic/loanmanagementapp/controller/HomeController.java</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/src/java/com/finlogic/loanmanagementapp/datamanager/LoginDataManager.java</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/web/js/login.js</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/web/WEB-INF/jsp/home/page.jsp</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/web/js/common/common_functions.js</file>
             <file>file:/E:/Spring-Loan/LoanManagementApp/web/WEB-INF/jsp/home.jsp</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/src/java/com/finlogic/loanmanagementapp/bean/LoginFormBean.java</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/web/WEB-INF/jsp/status.jsp</file>
-            <file>file:/E:/Spring-Loan/LoanManagementApp/web/js/home.js</file>
+            <file>file:/E:/Spring-Loan/LoanManagementApp/src/java/com/finlogic/loanmanagementapp/datamanager/impl2/ApiLoginDataManagerImpl.java</file>
         </group>
     </open-files>
 </project-private>
