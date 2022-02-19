@@ -85,6 +85,12 @@ function getAllFormData(oForm,isNew) {
                 sParam += "=";
                 sParam += encodeURIComponent(oForm.elements[i].value);
                 aParams.push(sParam);					
+        }if(oForm.elements[i].tagName == "INPUT" && oForm.elements[i].type=="email" )
+        {
+                sParam = encodeURIComponent(oForm.elements[i].name);
+                sParam += "=";
+                sParam += encodeURIComponent(oForm.elements[i].value);
+                aParams.push(sParam);					
         }
         if(oForm.elements[i].tagName == "INPUT" && oForm.elements[i].type=="hidden" )
         {
@@ -128,7 +134,7 @@ function getAllFormData(oForm,isNew) {
 
         if(XMLHttpRequestObject)
         {
-           
+          
             var obj = document.getElementById(destination);
          
             //obj.innerHTML = '<center><div><img src="images/loading.gif"  width="75" height="75"><br><font color=darkblue><b>Loading Page... </b></font></div></center>';

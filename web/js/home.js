@@ -14,6 +14,7 @@ function homeLoader(){
   xhttp.send();
 }
 function loginLoader(){
+     
     var xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     document.getElementById("ajax_login").innerHTML = this.responseText;
@@ -24,6 +25,7 @@ function loginLoader(){
 }
 
 function registerLoader(){
+   
     var xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     document.getElementById("ajax_register").innerHTML = this.responseText;

@@ -33,9 +33,9 @@
     
     <nav class="navbar">
         <a class="active" href="#home" id="homeAnchor"  >Home</a>
-        <a href="#service" id="">Services</a>
-        <a href="#about" id="">About</a>
-        <a href="#contact" id="">Contact</a>
+        <a href="#service" id="ServiceAnchor">Services</a>
+        <a href="#about" id="AboutUsAnchor">About</a>
+        <a href="#contact" id="ContactUsAnchor">Contact</a>
       
     </nav>
     
@@ -51,10 +51,12 @@
 <div id="ajax_login">
    
 </div>
-  <div id="loginstatus"></div>   
+
 <div id="ajax_register">
         
 </div>
+<div id="loginstatus"></div>   
+<div id="registerstatus"></div>   
 <div id="ajax_home">
 <!-- header section ends-->
 
@@ -67,7 +69,7 @@
           <h1>Loan Management System</h1>
           <h2>Help automate the entire loan lifecycle </h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#" class="btn" onclick="registerLoader()">Get Started</a>
+            <a href="#" class="btn" onclick="registerLoader()" id="getstarted">Get Started</a>
         </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -80,8 +82,8 @@
  
 <section class="services" id="service">
 
-    <h3 class="sub-heading"><b> our Services </b></h3>
-    <h1 class="heading"> popular Services </h1>
+    <h3 class="sub-heading"><b> Our Services </b></h3>
+    <h1 class="heading"> Popular Services </h1>
 
 
     <section class="icons-container">
@@ -134,7 +136,7 @@
 
 <section class="about" id="about">
 
-    <h3 class="sub-heading"><b> about us </b></h3>
+    <h3 class="sub-heading"><b> About Us </b></h3>
    
 
     <div class="row">
@@ -237,7 +239,7 @@
 
         <div class="box">
             <h3>locations</h3>
-            <a href="#">india</a>
+            <a href="#">India</a>
         </div>
 
         <div class="box">
@@ -309,6 +311,43 @@ $( "#loginAnchor" ).click(function() {
    $( "#ajax_home" ).hide();
 
 });
+
+$( "#getstarted" ).click(function() {
+  $( "#ajax_home" ).hide();
+  $( "#ajax_login" ).hide();
+  $( "#ajax_register" ).show();
+
+});
+
+
+$( "#ServiceAnchor" ).click(function() {
+  $( "#ajax_register" ).hide();
+   $( "#ajax_login" ).hide();
+   $( "#ajax_home" ).show();
+
+});
+
+$( "#AboutUsAnchor" ).click(function() {
+  $( "#ajax_register" ).hide();
+   $( "#ajax_login" ).hide();
+   $( "#ajax_home" ).show();
+
+});
+
+$( "#ContactUsAnchor" ).click(function() {
+  $( "#ajax_register" ).hide();
+   $( "#ajax_login" ).hide();
+   $( "#ajax_home" ).show();
+
+});
+//$( "#signinlink" ).click(function() {
+//alert("babu");
+//$( "#ajax_register" ).hide();
+//$( "#ajax_login" ).show();
+//$( "#ajax_home" ).hide();
+//
+//});
+ 
 </script>
 </body>
 </html>

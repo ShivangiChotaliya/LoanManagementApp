@@ -6,6 +6,7 @@
 package com.finlogic.loanmanagementapp.controller;
 
 import com.finlogic.loanmanagementapp.bean.LoginFormBean;
+import com.finlogic.loanmanagementapp.bean.RegisterFormBean;
 import com.finlogic.loanmanagementapp.datamanager.LoginDataManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,16 +29,30 @@ public class HomeController {
     
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")
     public ModelAndView getHome(){
+        System.out.println("----------------------++++++++++++++++");
         ModelAndView mv = new ModelAndView("home");
         mv.addObject("process", "home");
         return mv; 
     }
+    @RequestMapping(method = RequestMethod.GET)
+    public String getIndex(){
+        System.out.println("----------------------");
+        return "index"; 
+    }
+    @RequestMapping(method = RequestMethod.GET,params = "newIndex")
+    public String newIndex(){
+        System.out.println("----------------------");
+        return "newindex"; 
+    }
+    
+    
 //
 //      @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")
 //      public String getHome() {
 //              return "home";
 //        }
 
+    
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getLogin")
     public ModelAndView getLogin() {
         ModelAndView mv = new ModelAndView("home/page");
@@ -61,10 +76,20 @@ public class HomeController {
     
     
     // dependency injection
-    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkCredentials")
-    public ModelAndView checkCredentials(LoginFormBean loginFormBean) {
+    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkLoginCredentials")
+    public ModelAndView checkLoginCredentials(LoginFormBean loginFormBean) {
         ModelAndView mv = new ModelAndView("status");
         mv.addObject("status", loginDataManager.checkEmail(loginFormBean.getEmail()));
         return mv;
     }
+    
+    
+    // dependency injection
+    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkRegisterCredentials")
+    public ModelAndView checkRegisterCredentials(RegisterFormBean registerFormBean) {
+        ModelAndView mv = new ModelAndView("status");
+        mv.addObject("status", loginDataManager.checkEmail(registerFormBean.getEmail()));
+        return mv;
+    }
+    
 }
