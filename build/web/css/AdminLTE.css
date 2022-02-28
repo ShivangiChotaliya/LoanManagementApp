@@ -202,8 +202,9 @@ a:focus {
   margin-bottom: 0;
   margin-left: 230px;
   border: none;
-  min-height: 58px;
+  /*min-height: 58px;*/
   border-radius: 0;
+  padding-top: 9.5px;
 }
 .layout-top-nav .main-header .navbar {
   margin-left: 0;
@@ -254,7 +255,7 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 13px 12px;
   font-family: fontAwesome;
 }
 .main-header .sidebar-toggle:before {
@@ -363,7 +364,7 @@ a:focus {
   }
 }
 .navbar-toggle {
-  color: #fff;
+  color: black;
   border: 0;
   margin: 0;
   padding: 15px 15px;
@@ -394,9 +395,10 @@ a:focus {
   .main-header .navbar {
     margin: 0;
   }
-  .main-header .navbar-custom-menu {
-    float: right;
+  .logoutbtn{
+      margin:0;
   }
+  
 }
 @media (max-width: 991px) {
   .navbar-collapse.pull-left {

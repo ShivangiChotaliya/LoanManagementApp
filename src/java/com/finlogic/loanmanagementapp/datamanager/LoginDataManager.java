@@ -5,6 +5,9 @@
  */
 package com.finlogic.loanmanagementapp.datamanager;
 
+import com.finlogic.loanmanagementapp.bean.LoginEntityBean;
+import java.sql.SQLException;
+
 /**
  *
  * @author Shivangi
@@ -12,5 +15,5 @@ package com.finlogic.loanmanagementapp.datamanager;
 
 public interface LoginDataManager {
     
-    int checkEmail(String email);
+    int checkEmail(LoginEntityBean  loginEntityBean) throws SQLException;
 }

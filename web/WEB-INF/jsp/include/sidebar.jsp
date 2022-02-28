@@ -21,13 +21,13 @@
         </div>
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li>     
+<!--            <li>     
                 <a href="../admin/change_branch.php"><i class="fa fa-eye"></i> <span>View Another Branch</span></a>
             </li>
             <li style="border-top: 1px solid #000;"><a href="../home/home_branch.php"><i class="fa fa-circle-o text-aqua"></i> <span>Branch #1</span></a></li>
             <li>     
                 <a href="../home/home_branch.php"><i class="fa fa-home"></i> <span>Home Branch</span></a>
-            </li>
+            </li>-->
             <li class="treeview">     
                 <a href="#"><i class="fa fa-user"></i> <span>Borrowers</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -77,7 +77,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview">     
+<!--            <li class="treeview">     
                 <a href="#"><i class="fa fa-dollar"></i> <span>Repayments</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li>
@@ -183,7 +183,7 @@
                         <a href="../reports/all_entries.php"><i class="fa fa-circle-o"></i> All Entries</a>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         </ul> 
     </section>
 </aside>

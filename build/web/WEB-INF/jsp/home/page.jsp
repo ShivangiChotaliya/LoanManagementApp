@@ -71,7 +71,7 @@
 
                             <div class="actual-form" style="margin-top: 30px" >
                                 <div class="input-wrap">
-                                    <input type="text" class="input-field" name="email" id="email"  onclick="inputFade()"/>
+                                     <input type="text" class="input-field" id="email" name="email" onclick="inputFade()"/>
                                     <label>Email</label>
                                 </div>
 

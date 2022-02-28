@@ -1,9 +1,9 @@
 /*
  * Skin: Blue
- * ----------
+ * ----------@@
  */
 .skin-blue .main-header .navbar {
-  background-color: #3c8dbc;
+  background-color: #fff;
 }
 .skin-blue .main-header .navbar .nav > li > a {
   color: #ffffff;

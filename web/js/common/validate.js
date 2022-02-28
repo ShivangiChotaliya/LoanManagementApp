@@ -8,8 +8,11 @@ function validate_mandatory(elementId, caption){
     var value = document.getElementById(elementId).value;
     
     if(value === ''){
-        alert("Please Enter the Value of "+ caption)
-//        document.getElementById(elementId).placeholder  ="Enter Email";
+ //       alert("Please Enter the Value of "+ caption)
+ 
+        document.getElementById('msgfirstname').innerHTML = "Please Enter "  + caption;
+        //alert(document.getElementById('msgfname').innerHTML);
+        //document.getElementById(elementId).placeholder  ="Please Enter " + caption;
         document.getElementById(elementId).focus();
          
         return false;
@@ -19,7 +22,7 @@ function validate_mandatory(elementId, caption){
 
 function check_EmailID(elementId, caption)
 {  
-    
+   
     var regemail=/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
     var value = document.getElementById(elementId).value;
 
@@ -38,10 +41,9 @@ function Check_Alphabets(elementId,caption)
 
     var expr= /^[a-zA-Z][a-zA-Z. ']{0,99}$/;
     var value = document.getElementById(elementId).value;
-   
-    if(trimAll(value)!='' && (! expr.test(value)))
+    if(! expr.test(value))
     {
-        alert("Invalid name" + caption)
+        alert("Only alphabets are allowed in " + caption)
         document.getElementById(elementId).focus();
         return false;
     }
@@ -67,17 +69,11 @@ function check_Length(elementId,caption,length)
 // pincode validation
 function check_Pincode(elementId,caption)
 {
+    
     var regPincode=/^[0-9]{6}$/;
-    var value = document.getElementById(elementId).value;
-    var pinLength = value.length;
-    //alert(pinLength);
+    var value = document.getElementById(elementId).value;   
+    var pinLength = value.length;    
     if(pinLength > 0 && pinLength < 6 )
-    {
-        alert("Invalid " + caption)
-        document.getElementById(elementId).focus();
-        return false;
-    }
-    if((value != "") && (! regPincode.test(value)))
     {
         alert("Invalid " + caption)
         document.getElementById(elementId).focus();
@@ -102,3 +98,19 @@ function check_Phone_No(elementId,caption)
 
 }
 
+function checkAge(elementId, caption){
+    
+    var userDateinput = document.getElementById(elementId).value;
+    var birthDate = new Date(userDateinput);
+    const curDate = new Date();
+    let curYear = d.getFullYear();
+    
+    var diffrence = curYear - birthDate.getFullYear();
+    alert(diffrence);
+    
+    
+    if (diffrence < 18) {
+        alert("Enter Valid Birthdate");
+        return false;
+    }
+}

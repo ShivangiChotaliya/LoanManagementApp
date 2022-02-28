@@ -6,7 +6,7 @@
 
 function checkLoginCredentials(){
     
-    var result = validate_mandatory('email','Email') && validate_mandatory('password', 'Password') && check_EmailID('email','Email') ;
+    var result = validate_mandatory('email','Email') && validate_mandatory('password', 'Password')  ; //&& check_EmailID('email','Email')
   
     if(result){
         // submit data to server using ajax

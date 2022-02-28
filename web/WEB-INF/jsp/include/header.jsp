@@ -30,72 +30,93 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 
         <link rel="stylesheet" href="css/style.css">
+
         <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <link type="text/css" rel="stylesheet" href="tab_assets/jquery.pwstabs.css">
         <script src="tab_assets/jquery.pwstabs.min.js"></script>
-        
+
         <link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
         <script type="text/javascript" src="js/tamplate/jquery.plugin.js"></script> 
         <script type="text/javascript" src="js/tamplate/jquery.datepick.js"></script>
         <script type="text/javascript" src="js/tamplate/numbers.decimals.validation.js"></script>    
-    <script src="https://kit.fontawesome.com/6af5f97006.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/6af5f97006.js" crossorigin="anonymous"></script>
+        <style>
 
+            .navbar a{
+                font-size: 1.7rem;
+                border-radius: .5rem;
+                padding:.5rem 1.5rem;
+                color:#666;
+            }
+
+            .navbar a.active,
+            .navbar a:hover{
+                color:#fff;
+                background:  rgb(0,189,170); ;
+            }
+
+/*            @media (max-width:768px){
+
+
+                .navbar{
+                    position: absolute;
+                    top:100%; left:0; right:0;
+                    background:#fff;
+                    border-top: .1rem solid rgba(0,0,0,.2);
+                    border-bottom: .1rem solid rgba(0,0,0,.2);
+                    padding:1rem;
+                    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                }
+
+                .navbar.active{
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+
+                .navbar a{
+                    display: block;
+                    padding:1.5rem;
+                    margin:1rem;
+                    font-size: 2rem;
+                    background:#eee;
+                }
+
+            }*/
+        </style>
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">    
         <div class="wrapper">
-            <!-- Main Header -->            
-       
-            
-   <!-- Main Header -->          
-   <header class="main-header">
+                 
 
-    <!-- Logo -->
-    <a href="#" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><i class="fas fa-coins"></i><b>Loan</b> Admin</span>
-    </a>
+            <header class="main-header">
 
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Sidebar toggle button-->
 
-        <div class="navbar-header">
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                Left Menu
-            </a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <i class="fa fa-bars">Top Menu</i>
-            </button>
+                <a href="#" class="logo">
+                    <span class="logo-lg"><i class="fas fa-coins"></i><b>Loan</b> Admin</span>
+                </a>
+
+                <nav class="navbar navbar-static-top" role="navigation">
+
+
+                    <div class="navbar-header">
+                        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                            Left Menu
+                        </a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars">Top Menu</i>
+                       </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse pull-right navbar logoutbtn" style="padding-right:20px" id="navbar-collapse">
+                        <div>
+                            <a class="active" href="#contact" id="">Logout</a> 
+                        </div> 
+                    </div>
+                </nav>
+
+
+            </header>
         </div>
-        <!-- Navbar Right Menu -->
-        <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
+    </body>
 
-            <!-- Top Menu -->
-            <ul class="nav navbar-nav">
-                <li>     
-                    <a href="../admin/index.php"><i class="fa fa-ban"></i> <span>Admin</span></a>
-                </li>  
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-link"></i> <span>Settings</span> <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">  
-                        <li>          
-                            <a href="../billing/billing.php"><i class="fa fa-circle-o"></i> Billing</a>
-                        </li>  
-                        <li>          
-                            <a href="../home/change_password.php"><i class="fa fa-circle-o"></i> Change Password</a>
-                        </li>  
-                        <li>          
-                            <a href="../index.php"><i class="fa fa-circle-o"></i> Logout</a>
-                        </li>  
-                    </ul>
-                </li>  
-                <li>
-                    <a href="support_login.php" target="_blank"><i class="fa fa-support"></i> <span>Help</span></a>
-                </li>  
-            </ul>                 
-        </div>
-
-    </nav>
-</header>
+           
