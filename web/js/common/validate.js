@@ -4,17 +4,24 @@
  * and open the template in the editor.
  */
 
-function validate_mandatory(elementId, caption){
+//function validate_mandatory(elementId, caption){
+//    var value = document.getElementById(elementId).value;
+//   
+//    if(value === ''){
+// //       alert("Please Enter the Value of "+ caption)
+//        document.getElementById(elementId).placeholder  ="Please Enter " + caption;
+//        document.getElementById(elementId).focus();
+//         
+//        return false;
+//    }
+//    return true;
+//}
+
+function validate_mandatory_onlyforloginfrm(elementId, caption){   
     var value = document.getElementById(elementId).value;
-    
     if(value === ''){
- //       alert("Please Enter the Value of "+ caption)
- 
-        document.getElementById('msgfirstname').innerHTML = "Please Enter "  + caption;
-        //alert(document.getElementById('msgfname').innerHTML);
-        //document.getElementById(elementId).placeholder  ="Please Enter " + caption;
-        document.getElementById(elementId).focus();
-         
+        document.getElementById(elementId).placeholder = "Please Enter "  + caption;
+        document.getElementById(elementId).focus();       
         return false;
     }
     return true;

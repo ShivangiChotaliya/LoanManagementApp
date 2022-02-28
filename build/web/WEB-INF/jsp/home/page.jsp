@@ -27,14 +27,21 @@
                             <div class="actual-form" style="margin-top: 30px" >
                                 <div class="input-wrap">
                                     <input type="text" class="input-field" id="email" name="email" onclick="inputFade()"/>
-                                    <label>Email</label>
+                                    <label>Email</label>                                    
                                 </div>
-
                                 <div class="input-wrap">
-                                    <input type="password" class="input-field" name="password" id="password" onclick="inputFade()"/>
-                                    <label>Password</label>
+                                    <input type="password" class="input-field" name="password" id="password" onclick="inputFade()" />
+                                    <label>Password</label>         
                                 </div>
-
+                                <div>
+                                    <input type="hidden" name="loginStatus" id="loginStatus"
+                                    <c:choose><c:when test="${loginstatus eq '1'}">
+                                        value ="<c:out value="1"></c:out>"
+                                    </c:when>
+                                    <c:when test="${loginstatus eq null}">
+                                        value ="<c:out value="0"></c:out>"
+                                    </c:when></c:choose>>
+                                </div>
                                 <input type="submit" value="Sign In" class="sign-btn" name="signin" onclick="return checkLoginCredentials()" />
 
 
@@ -80,16 +87,24 @@
                                     <label>Password</label>
                                 </div>
                                 <div class="input-wrap">
-                                    <input type="password" class="input-field" name="c_password" id="c_password" onclick="inputFade()"/>
+                                    <input type="password" class="input-field" name="c_password" id="c_password" />
                                     <label>Confirm Password</label>
                                 </div>
+                                
+                                   
+                                <input type="hidden" name="registerStatus" id="registerStatus"
+                                    <c:choose><c:when test="${status eq '1'}">
+                                        value ="<c:out value="1"></c:out>"
+                                    </c:when>
+                                    <c:when test="${status eq null}">
+                                        value ="<c:out value="0"></c:out>"
+                                    </c:when></c:choose>>
                                 <input type="submit" value="Sign Up" class="sign-btn" name="signup" onclick="return checkRegisterCredentials()" />
 
                                 <p class="text">
                                     Already have an Account?
                                     <a href="home.fin?cmdAction=getHome#" onclick="loginLoader()"  id="signinlink" style="color: black">Sign in</a> 
-                                </p> 
-                               
+                                </p>                                
                             </div>
                         </form>
                     </div>
@@ -105,3 +120,4 @@
         </main>
 
     </c:if>
+ 

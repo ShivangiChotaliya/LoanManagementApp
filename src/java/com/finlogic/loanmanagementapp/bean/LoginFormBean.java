@@ -13,6 +13,13 @@ public class LoginFormBean {
     private String email;
     private String password;
 
+    public LoginFormBean(){}
+             
+    public LoginFormBean(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -27,6 +34,11 @@ public class LoginFormBean {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginFormBean{" + "email=" + email + ", password=" + password + '}';
     }
     
 }

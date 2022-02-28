@@ -18,15 +18,14 @@ import org.springframework.stereotype.Repository;
  * @author Shivangi
  */
 @Repository
-@Qualifier("db")
 public class LoginDataManagerImpl implements LoginDataManager{
     SqlUtility sqlUtility = new SqlUtility();  
-    @Override
-    public int checkEmail(LoginEntityBean loginEntityBean) throws SQLException{
-        List result =  sqlUtility.getList("select * from login;"  , "db_login");
-        
-        
-        
-        return 12;
+
+     public int verifyUser(LoginEntityBean loginEntityBean) throws SQLException{
+         
+        String sql =   "select Count(*) from login where email = '" + loginEntityBean.getEmail()+"' and password='"+loginEntityBean.getPassword()+"'";  
+        int res =  sqlUtility.getCount(sql, "db_login"); 
+        return res;
     }
+   
 }

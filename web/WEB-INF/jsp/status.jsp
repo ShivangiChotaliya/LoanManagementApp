@@ -12,8 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        hello
-        <h1> Email ${status} </h1>
+       
+        <h1> Emaila ${status} </h1>
     </body>
 </html>
-<div id="loginstatus"></div>  
+<!--<div id="loginstatus">
+     
+</div>  -->

@@ -13,5 +13,5 @@ import java.sql.SQLException;
  * @author Shivangi
  */
 public interface LoginService {
-    int checkCredentials(LoginFormBean formBean) throws SQLException;
+    int loginCredentials(LoginFormBean formBean) throws SQLException;
 }

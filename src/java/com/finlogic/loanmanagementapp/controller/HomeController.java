@@ -8,6 +8,7 @@ package com.finlogic.loanmanagementapp.controller;
 import com.finlogic.loanmanagementapp.bean.LoginFormBean;
 import com.finlogic.loanmanagementapp.bean.RegisterFormBean;
 import com.finlogic.loanmanagementapp.service.LoginService;
+import com.finlogic.loanmanagementapp.service.RegisterService;
 import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class HomeController {
 
     @Autowired
     LoginService loginService;
+    @Autowired
+    RegisterService registerService;
     
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")
     public ModelAndView getHome(){
@@ -33,19 +36,7 @@ public class HomeController {
         mv.addObject("process", "home");
         return mv; 
     }
-    
-    @RequestMapping(method = RequestMethod.GET, params = "cmdAction=addBorrowers")
-    public ModelAndView addBorrowers(){
-        ModelAndView mv = new ModelAndView("borrowers/addBorrower");
-        return mv; 
-    }
-    
-    @RequestMapping(method = RequestMethod.GET, params = "cmdAction=viewBorrowers")
-    public ModelAndView viewBorrowers(){
-        ModelAndView mv = new ModelAndView("borrowers/viewBorrower");
-        return mv; 
-    }
-    
+       
 //
 //      @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getHome")
 //      public String getHome() {
@@ -68,7 +59,7 @@ public class HomeController {
     }
 
     @RequestMapping(method = RequestMethod.GET, params = "cmdAction=getForgotPassword")
-    public ModelAndView getforgotPassword() {
+    public ModelAndView getForgotPassword() {
         ModelAndView mv = new ModelAndView("home/page");
         mv.addObject("process", "forgotPassword");
         return mv;
@@ -78,9 +69,37 @@ public class HomeController {
     // dependency injection
     @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkLoginCredentials")
     public ModelAndView checkLoginCredentials(LoginFormBean loginFormBean) {
-        ModelAndView mv = new ModelAndView("status");
+        ModelAndView mv = new ModelAndView("home/page");
+        try{    
+            int res =loginService.loginCredentials(loginFormBean);
+            if(res==1){
+                mv.addObject("process", "login");
+                mv.addObject("loginstatus", "1");
+            }else{
+                 mv.addObject("process", "login");
+                mv.addObject("loginstatus", "0");
+            }
+        }catch(SQLException ex){
+           mv.addObject("loginstatus", ex.getMessage());
+        }
+        return mv;
+    }
+    
+    
+      // dependency injection
+    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkRegisterCredentials")
+    public ModelAndView checkRegisterCredentials(RegisterFormBean registerFormBean) {
+       ModelAndView mv = new ModelAndView("home/page");
         try{
-            mv.addObject("status", loginService.checkCredentials(loginFormBean));
+            int res =registerService.registerCredentials(registerFormBean);
+            if(res==1){
+                 mv.addObject("process", "register");
+                mv.addObject("status", "1");
+            }else{
+                 mv.addObject("process", "register");
+                mv.addObject("status", "0");
+            }
+           
         }catch(SQLException ex){
             mv.addObject("status", ex.getMessage());
         }
@@ -89,11 +108,21 @@ public class HomeController {
     
     
 //    // dependency injection
-//    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkRegisterCredentials")
-//    public ModelAndView checkRegisterCredentials(RegisterFormBean registerFormBean) {
+//    @RequestMapping(method = RequestMethod.POST, params = "cmdAction=checkLoginCredentials")
+//    public ModelAndView checkLoginCredentials(LoginFormBean loginFormBean) {
 //        ModelAndView mv = new ModelAndView("status");
-//        mv.addObject("status", LoginService.checkCredentials(registerFormBean));
+//        try{
+//            int res =loginService.checkCredentials(loginFormBean);
+//            if(res==1){
+//                mv.addObject("status", res);
+//            }
+//            
+//        }catch(SQLException ex){
+//           mv.addObject("status", ex.getMessage());
+//        }
 //        return mv;
 //    }
+//    
     
+  
 }

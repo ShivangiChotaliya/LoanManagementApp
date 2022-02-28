@@ -15,5 +15,5 @@ import java.sql.SQLException;
 
 public interface LoginDataManager {
     
-    int checkEmail(LoginEntityBean  loginEntityBean) throws SQLException;
+    int verifyUser(LoginEntityBean  loginEntityBean) throws SQLException;
 }

@@ -14,6 +14,14 @@ public class RegisterFormBean {
     private String password;
     private String c_password;
 
+    public RegisterFormBean(){}
+    
+    public RegisterFormBean(String email, String password, String c_password) {
+        this.email = email;
+        this.password = password;
+        this.c_password = c_password;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -36,6 +44,11 @@ public class RegisterFormBean {
 
     public void setC_password(String c_password) {
         this.c_password = c_password;
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterFormBean{" + "email=" + email + ", password=" + password + ", c_password=" + c_password + '}';
     }
     
     

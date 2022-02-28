@@ -19,32 +19,47 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
  */
 public class SqlUtility {
     
-       // using Prepared statement
+    //  String JDBC_DRIVER = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/";
         String username = "root";
         String password = "Shivangi@27";
     
     public List getList(String sql, String dbName)throws SQLException{
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+        }catch(ClassNotFoundException e){
+            e.getMessage();
+        }
 
- 
-        // String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-        
-            try{
-                Class.forName("com.mysql.jdbc.Driver");
-            }catch(ClassNotFoundException e){
+        Connection con =DriverManager.getConnection(url + dbName, username,password);
 
-            }
-       
-            Connection con =DriverManager.getConnection(url + dbName, username,password);
-            
-            JdbcTemplate template = new JdbcTemplate(new SingleConnectionDataSource(con,true)); 
-            return template.queryForList(sql);
+        JdbcTemplate template = new JdbcTemplate(new SingleConnectionDataSource(con,true)); 
+        return template.queryForList(sql);
     }
     
-     public int getCount(String sql, String dbName)throws SQLException{
-            Connection con =DriverManager.getConnection(url+ dbName, username,password);
-            
-            JdbcTemplate template = new JdbcTemplate(new SingleConnectionDataSource(con,true)); 
-            return template.update(sql);
+    // insert
+    public int savedata(String sql, String dbName)throws SQLException{
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+        }catch(ClassNotFoundException e){
+            e.getMessage();
+        }
+        Connection con =DriverManager.getConnection(url + dbName, username,password);
+
+        JdbcTemplate template = new JdbcTemplate(new SingleConnectionDataSource(con,true)); 
+        return template.update(sql);
+    }
+        
+        
+    public int getCount(String sql, String dbName)throws SQLException{
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+        }catch(ClassNotFoundException e){
+            e.getMessage();
+        }
+        
+        Connection con =DriverManager.getConnection(url+ dbName, username,password);
+        JdbcTemplate template = new JdbcTemplate(new SingleConnectionDataSource(con,true)); 
+        return template.queryForInt(sql);
     }
 }

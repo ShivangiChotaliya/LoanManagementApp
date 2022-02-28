@@ -22,12 +22,11 @@ import org.springframework.stereotype.Service;
 public class LoginServiceImpl implements LoginService{
     
     @Autowired
-    @Qualifier("db")
     LoginDataManager loginDataManager;
     
-    public int checkCredentials(LoginFormBean formBean) throws SQLException{
+    public int loginCredentials(LoginFormBean formBean) throws SQLException{
     
-        return loginDataManager.checkEmail(convertFormBeanToEntityBean(formBean));
+        return loginDataManager.verifyUser(convertFormBeanToEntityBean(formBean));
     }
     public LoginEntityBean convertFormBeanToEntityBean(LoginFormBean formBean){
         LoginEntityBean loginEntityBean = new LoginEntityBean();

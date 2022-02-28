@@ -22,7 +22,9 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/register.css" />
- 
+    
+        
+        
 </head>
 <body >
     
@@ -55,10 +57,9 @@
 <div id="ajax_register">
         
 </div>
-<div id="loginstatus"></div>   
-<div id="registerstatus"></div>   
+
 <div id="ajax_home">
-<!-- header section ends-->
+
 
 
 <section id="home" class="d-flex align-items-center">
@@ -340,14 +341,14 @@ $( "#ContactUsAnchor" ).click(function() {
    $( "#ajax_home" ).show();
 
 });
-//$( "#signinlink" ).click(function() {
-//alert("babu");
-//$( "#ajax_register" ).hide();
-//$( "#ajax_login" ).show();
-//$( "#ajax_home" ).hide();
+ 
+// 
+//$( "#ajax_login" ).show(function() {
+//  $( "#ajax_register" ).hide();
+//   $( "#ajax_home" ).hide();
 //
 //});
- 
+// 
 </script>
 </body>
 </html>

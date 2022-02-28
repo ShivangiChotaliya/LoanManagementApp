@@ -120,7 +120,7 @@ function getAllFormData(oForm,isNew) {
 
  function getSynchronousData(dataSource, params, destination)
     {
-       
+   
         var XMLHttpRequestObject =false;
 
         if(window.XMLHttpRequest)
@@ -146,11 +146,13 @@ function getAllFormData(oForm,isNew) {
             if(XMLHttpRequestObject.readyState == 4)
             { 
                 if(XMLHttpRequestObject.status == 200){                      
-                    obj.innerHTML = XMLHttpRequestObject.responseText;                                   
+                    obj.innerHTML = XMLHttpRequestObject.responseText;                  
                 }
                 else{                     
-                    obj.innerHTML = 'some problem arise';              
+                    obj.innerHTML = 'some problem arise';  
                 }            
             }
         }
     }
+    
+  

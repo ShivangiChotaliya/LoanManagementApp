@@ -27,12 +27,12 @@
                         <label for="firstname" class="col-sm-1 control-label">First Name</label>                      
                         <div class="col-sm-5">   
                             <!--onfocusout-->
-                            <input  type="text" name="firstname" class="form-control" id="firstname"  placeholder="Enter First Name Only" onblur="nVal();">
+                            <input  type="text" name="firstName" class="form-control" id="firstname"  placeholder="Enter First Name Only" onblur="nVal();">
                             <label   id="msgfirstname" style="color:red"></label>
                         </div>
                         <label for="lastName" class="col-sm-1 control-label">Middle / Last Name</label>                      
                         <div class="col-sm-5">
-                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Middle and Last Name" >
+                            <input type="text" name="lastName" class="form-control" id="lastname" placeholder="Middle and Last Name" >
                              <label   id="msglastname" style="color:red"></label>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                     <div class="form-group">
                         <label for="inputBorrowerMobile" class="col-sm-1 control-label">Mobile</label>                      
                         <div class="col-sm-5">
-                            <input type="text" name="borrower_mobile" class="form-control" id="inputBorrowerMobile" placeholder="Numbers Only" value="" onkeypress="return isNumberKey(event)">                            
+                            <input type="text" name="mobile" class="form-control" id="inputBorrowerMobile" placeholder="Numbers Only" value="" onkeypress="return isNumberKey(event)">                            
                         </div>
                         <label for="inputBorrowerEmail" class="col-sm-1 control-label">Email</label>                      
                         <div class="col-sm-5">

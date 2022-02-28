@@ -10,8 +10,15 @@ package com.finlogic.loanmanagementapp.bean;
  * @author Shivangi
  */
 public class LoginEntityBean {
-     private String email;
+    private String email;
     private String password;
+    
+    public LoginEntityBean(){}
+    
+    public LoginEntityBean(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
     public String getEmail() {
         return email;
@@ -27,6 +34,11 @@ public class LoginEntityBean {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginEntityBean{" + "email=" + email + ", password=" + password + '}';
     }
     
 }
