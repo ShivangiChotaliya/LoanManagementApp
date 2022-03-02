@@ -92,6 +92,7 @@ public class HomeController {
        ModelAndView mv = new ModelAndView("home/page");
         try{
             int res =registerService.registerCredentials(registerFormBean);
+            System.out.println("==========" +res);
             if(res==1){
                  mv.addObject("process", "register");
                 mv.addObject("status", "1");

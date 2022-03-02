@@ -1,0 +1,52 @@
+ use db_login;
+
+
+drop table login;
+create table if not exists login(id int, email varchar(50), password varchar(20));
+
+
+select * from login;
+insert into login(id,email,password) values(1,"shivangi@gmail.com","111111");
+insert into login(id,email,password) values(2,"parth@gmail.com","2");
+insert into login(id,email,password) values(3,"sejal@gmail.com","3");
+ insert into login(id,ema\il,password) values(4,"janvi@gmail.com","4");
+select * from login;
+
+-- select count(*) from login where email='shivangi@gmail.com' and password='12';
+
+-- select Count(*) from login where email = '1' and password='1'
+
+
+
+
+use db_login;
+drop table borrower;
+CREATE TABLE IF NOT EXISTS borrower(
+id INT(10) PRIMARY KEY auto_increment,
+firstname VARCHAR(20) NOT NULL,
+lastname VARCHAR(20) NOT NULL,
+date_of_birth date DEFAULT NULL,
+gender VARCHAR(20) NOT NULL,
+pan_number VARCHAR(10) NOT NULL,
+country VARCHAR(30) DEFAULT NULL,
+state VARCHAR(30) DEFAULT NULL,
+city VARCHAR(30) DEFAULT NULL,
+pincode INT DEFAULT NULL,
+address VARCHAR(100) DEFAULT NULL,
+mobile VARCHAR(20) DEFAULT NULL,
+email VARCHAR(320) DEFAULT NULL, --  64 + 1 (@) + 255
+working_status VARCHAR(100) DEFAULT NULL,
+photo mediumblob
+);
+select * from borrower;
+
+insert into borrower(firstname,lastname,date_of_birth,gender,pan_number,country,state,city,pincode,address,mobile,email,working_status,photo) values("shivangi","chotaliya","1998-11-27","Female","45781A8EW3","India","Gujarat","Surat","356778","Sangini gardenia","9632541212","shivangi@gmail.com","Student",NULL);
+
+-- insert into borrower values(1,"shivangi","chotaliya","1998-11-27","Female","45781A8EW3","India","Gujarat","Surat",356421,"Sangini gardenia","9632541212","shivangi@gmail.com","Student",NULL);
+
+select * from borrower;
+
+
+
+
+

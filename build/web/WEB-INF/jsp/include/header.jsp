@@ -109,7 +109,7 @@
 
                     <div class="collapse navbar-collapse pull-right navbar logoutbtn" style="padding-right:20px" id="navbar-collapse">
                         <div>
-                            <a class="active" href="#contact" id="">Logout</a> 
+                            <a class="active" href="#" id="">Logout</a> 
                         </div> 
                     </div>
                 </nav>

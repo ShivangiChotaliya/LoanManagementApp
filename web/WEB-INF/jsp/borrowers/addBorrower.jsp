@@ -5,11 +5,7 @@
 --%>
 
 
-
-
-<%@include file="../include/header.jsp" %>
-<%@include file="../include/sidebar.jsp" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -61,7 +57,7 @@
                     <div class="form-group">
                         <label for="country" class="col-sm-1 control-label">Country</label>                      
                         <div class="col-sm-5">
-                            <select class="form-control" name="borrower_country" id="country" required>
+                            <select class="form-control" name="country" id="country" required>
                                 <option value="India" selected>India</option>
                                 <option value="France" >France</option>
                                 <option value="Japan" >Japan</option>
@@ -101,10 +97,12 @@
                         <label for="inputBorrowerMobile" class="col-sm-1 control-label">Mobile</label>                      
                         <div class="col-sm-5">
                             <input type="text" name="mobile" class="form-control" id="inputBorrowerMobile" placeholder="Numbers Only" value="" onkeypress="return isNumberKey(event)">                            
+                             <label id="msginputBorrowerMobile" style="color:red"></label>
                         </div>
                         <label for="inputBorrowerEmail" class="col-sm-1 control-label">Email</label>                      
                         <div class="col-sm-5">
                             <input type="text" name="email" class="form-control" id="email" placeholder="Email" >
+                             <label id="msgemail" style="color:red"></label>
                         </div>
                     </div> 
                     <div class="form-group">
@@ -119,32 +117,50 @@
                                 <option value="Pensioner" >Pensioner</option>
                                 <option value="Unemployed" >Unemployed</option>
                             </select>
+                            <label id="msgworkingstatus" style="color:red"></label>
                         </div>
                         <label for="photo" class="col-sm-1 control-label">Borrower Photo</label>
                         <div class="col-sm-5">    
                             <input type="file" id="photo" name="photo">
+                            <label id="msgphoto" style="color:red"></label>
                         </div>
                     </div> 
+                    <div>
+                        email ${addBorrowerStatus}
+                        
+                    </div>
+                    <div>
+                        <input type="hidden" name="borrower_status" id="borrower_status"
+                        <c:choose><c:when test="${addBorrowerStatus eq '1'}">
+                            value ="<c:out value="1"></c:out>"
+                        </c:when>
+                        <c:when test="${addBorrowerStatus eq null}">
+                            value ="<c:out value="0"></c:out>"
+                        </c:when></c:choose>>
+                    </div>
                 </div>
                 <div class="box-footer">
-                    <button type="button" class="btn btn-default"  onClick="parent.location = 'add_borrower.html'">Back</button>
+                    <button type="button" class="btn btn-default" >Back</button>
                     <button type="submit" class="btn btn-info pull-right"  onclick="return checkBorrowersCredentials()" >Submit</button>
 
-                    <script type="text/javascript">
+<!--                    <script type="text/javascript">
                         $('#add_borrower_form').submit(function () {
                             $(this).find('button[type=submit]').prop('disabled', true);
                             $('.btn').prop('disabled', true);
                             $(this).find('button[type=submit]').button('loading');
                             return true;
                         });
-                    </script>
+                    </script>-->
                 </div><!-- /.box-footer -->
-        </div>        
+        </div>    
+        <div id="dest">
+            
+        </div>
         </form>
 </div>
 
 
-<script>
+<!--<script>
         $(function () {
             $('#dateofbirth').datepick({
                 defaultDate: '1997/05/27', showTrigger: '#calImg',
@@ -191,7 +207,7 @@
         }
     });
 
-</script>
+</script>-->
 
-<%@include file="../include/footer.jsp" %>
+
 

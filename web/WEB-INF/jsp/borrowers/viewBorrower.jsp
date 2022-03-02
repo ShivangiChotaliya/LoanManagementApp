@@ -2,8 +2,6 @@
 
 
 
-<%@include file="../include/header.jsp" %>
-<%@include file="../include/sidebar.jsp" %>
 <div class="content-wrapper">
 <section class="content-header">
     <h1>View Borrower</h1>
@@ -149,4 +147,3 @@
         </div>
     </section>
 </div>
-<%@include file="../include/footer.jsp" %>

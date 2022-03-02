@@ -13,6 +13,6 @@ import java.sql.SQLException;
  * @author Shivangi
  */
 public interface BorrowerDataManager {
-       int addBorrower(BorrowersEntityBean  loginEntityBean) throws SQLException;
+       int addBorrower(BorrowersEntityBean  borrowersEntityBean) throws SQLException;
  
 }

@@ -9,8 +9,7 @@ import com.finlogic.common.utility.SqlUtility;
 import com.finlogic.loanmanagementapp.bean.LoginEntityBean;
 import com.finlogic.loanmanagementapp.datamanager.LoginDataManager;
 import java.sql.SQLException;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,10 +19,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class LoginDataManagerImpl implements LoginDataManager{
     SqlUtility sqlUtility = new SqlUtility();  
-
-     public int verifyUser(LoginEntityBean loginEntityBean) throws SQLException{
+    @Override
+    public int verifyUser(LoginEntityBean loginEntityBean) throws SQLException{
          
-        String sql =   "select Count(*) from login where email = '" + loginEntityBean.getEmail()+"' and password='"+loginEntityBean.getPassword()+"'";  
+        String sql = "select Count(*) from login where email = '" + loginEntityBean.getEmail()+"' and password='"+loginEntityBean.getPassword()+"'";  
         int res =  sqlUtility.getCount(sql, "db_login"); 
         return res;
     }

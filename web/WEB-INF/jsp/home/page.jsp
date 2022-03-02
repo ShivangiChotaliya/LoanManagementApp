@@ -19,19 +19,21 @@
                             </div>
 
                             <div class="heading_heading" style="margin-top:30px">
-                                <h2>Welcome Back,Sign in to continue</h2>
+                                <h2>Welcome,Sign in to continue</h2>
                                 <h6>Not registred yet?</h6>
                                 <a href="#" class="toggle" onclick="">Sign up</a>
                             </div>
 
                             <div class="actual-form" style="margin-top: 30px" >
                                 <div class="input-wrap">
-                                    <input type="text" class="input-field" id="email" name="email" onclick="inputFade()"/>
-                                    <label>Email</label>                                    
+                                    <input type="text" class="input-field" id="email" name="email" placeholder="Email" onclick="inputFade()"/>
+<!--                                    <label>Email</label>  -->
+                                    
                                 </div>
+                                
                                 <div class="input-wrap">
-                                    <input type="password" class="input-field" name="password" id="password" onclick="inputFade()" />
-                                    <label>Password</label>         
+                                    <input type="password" class="input-field" name="password" id="password" placeholder="Password" onclick="inputFade()" />
+
                                 </div>
                                 <div>
                                     <input type="hidden" name="loginStatus" id="loginStatus"

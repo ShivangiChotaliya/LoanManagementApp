@@ -4,26 +4,54 @@
  * and open the template in the editor.
  */
 
-//function validate_mandatory(elementId, caption){
-//    var value = document.getElementById(elementId).value;
-//   
-//    if(value === ''){
-// //       alert("Please Enter the Value of "+ caption)
-//        document.getElementById(elementId).placeholder  ="Please Enter " + caption;
-//        document.getElementById(elementId).focus();
-//         
-//        return false;
-//    }
-//    return true;
-//}
+function validate_mandatory(elementId, caption){
+    var value = document.getElementById(elementId).value;
 
-function validate_mandatory_onlyforloginfrm(elementId, caption){   
+    if(value === ''){
+        document.getElementById('msg'+elementId).innerHTML = "Please Enter "  + caption;
+        document.getElementById(elementId).focus();
+
+        return false;
+    }
+    return true;
+}
+
+
+function validate_mandatory_onlyforhomefrm(elementId, caption){   
     var value = document.getElementById(elementId).value;
     if(value === ''){
         document.getElementById(elementId).placeholder = "Please Enter "  + caption;
         document.getElementById(elementId).focus();       
         return false;
     }
+    return true;
+}
+function check_homefrm_EmailID(elementId, caption)
+{  
+   
+    var regemail=/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    var value = document.getElementById(elementId).value;
+
+    if((!regemail.test(value)))
+    {
+        alert("Invalid "  + caption);
+        document.getElementById(elementId).focus();
+        return false;
+    }
+    return true;
+}
+
+// password length
+function check_password_Length(elementId,caption,length)
+{alert('hfds');
+    var value = document.getElementById(elementId).value;
+    
+        if(value.length < length)
+        {   
+            alert("Password must at least 6 character long");
+            document.getElementById(elementId).focus();
+            return false;
+        }   
     return true;
 }
 
@@ -35,7 +63,7 @@ function check_EmailID(elementId, caption)
 
     if((value != "") && (! regemail.test(value)))
     {
-        alert("Invalid " + caption)
+         document.getElementById(elementId).placeholder = "Invalid "  + caption;
         document.getElementById(elementId).focus();
         return false;
     }
@@ -57,19 +85,17 @@ function Check_Alphabets(elementId,caption)
     return true;
 }
 
-// check length of address
+// password length
 function check_Length(elementId,caption,length)
 {
     var value = document.getElementById(elementId).value;
-    if(trimAll(value) !='')
-    {
-            if(value.length > length)
-            {
-                alert("Invalid " + caption)
-                document.getElementById(elementId).focus();
-                return false;
-            }
-    }
+    
+        if(value.length > length)
+        {   alert(value.length);
+            document.getElementById(elementId).placeholder = "Invalid "  + caption;
+            document.getElementById(elementId).focus();
+            return false;
+        }   
     return true;
 }
 

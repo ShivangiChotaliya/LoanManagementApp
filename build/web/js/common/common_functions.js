@@ -52,7 +52,7 @@ function getAllFormData(oForm,isNew) {
             }
         }
          if(oForm.elements[i].type=="textarea")
-        {
+        {   
             sParam=encodeURIComponent(oForm.elements[i].name);
             sParam+="=";
             sParam+=encodeURIComponent(oForm.elements[i].value);
@@ -80,7 +80,7 @@ function getAllFormData(oForm,isNew) {
 //            aParams.push(sParam);
 //        }
        if(oForm.elements[i].tagName == "INPUT" && oForm.elements[i].type=="text" )
-        {
+        {   
                 sParam = encodeURIComponent(oForm.elements[i].name);
                 sParam += "=";
                 sParam += encodeURIComponent(oForm.elements[i].value);
@@ -115,44 +115,82 @@ function getAllFormData(oForm,isNew) {
         }
 
     }
+   
     return aParams.join("&");
 }
 
  function getSynchronousData(dataSource, params, destination)
+{  
+
+    var XMLHttpRequestObject =false;
+
+    if(window.XMLHttpRequest)
     {
-   
-        var XMLHttpRequestObject =false;
+            XMLHttpRequestObject = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {
+            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
 
-        if(window.XMLHttpRequest)
-        {
-                XMLHttpRequestObject = new XMLHttpRequest();
-        }
-        else if (window.ActiveXObject)
-        {
-                XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
-        }
+    if(XMLHttpRequestObject)
+    { 
 
-        if(XMLHttpRequestObject)
-        {
-          
-            var obj = document.getElementById(destination);
-         
-            //obj.innerHTML = '<center><div><img src="images/loading.gif"  width="75" height="75"><br><font color=darkblue><b>Loading Page... </b></font></div></center>';
-            obj.innerHTML = 'Loading....';
-            XMLHttpRequestObject.open("POST",dataSource,false);
-            XMLHttpRequestObject.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-            XMLHttpRequestObject.send(params);
+        var obj = document.getElementById(destination);
 
-            if(XMLHttpRequestObject.readyState == 4)
-            { 
-                if(XMLHttpRequestObject.status == 200){                      
-                    obj.innerHTML = XMLHttpRequestObject.responseText;                  
-                }
-                else{                     
-                    obj.innerHTML = 'some problem arise';  
-                }            
+        //obj.innerHTML = '<center><div><img src="images/loading.gif"  width="75" height="75"><br><font color=darkblue><b>Loading Page... </b></font></div></center>';
+        obj.innerHTML = 'Loading....';
+        XMLHttpRequestObject.open("POST",dataSource,false);
+        XMLHttpRequestObject.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        XMLHttpRequestObject.send(params);
+
+        if(XMLHttpRequestObject.readyState == 4)
+        {                   
+            if(XMLHttpRequestObject.status == 200){                      
+                obj.innerHTML = XMLHttpRequestObject.responseText;                  
             }
+            else{                     
+                obj.innerHTML = 'some problem arise';  
+            }            
         }
     }
+}
     
   
+ function getSynchronousDataTwo(dataSource, params, destination)
+{  
+
+    var XMLHttpRequestObject =false;
+
+    if(window.XMLHttpRequest)
+    {
+            XMLHttpRequestObject = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {
+            XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    if(XMLHttpRequestObject)
+    { 
+
+        var obj = document.getElementById(destination);
+
+        //obj.innerHTML = '<center><div><img src="images/loading.gif"  width="75" height="75"><br><font color=darkblue><b>Loading Page... </b></font></div></center>';
+        obj.innerHTML = 'Loading....';
+        XMLHttpRequestObject.open("POST",dataSource,false);
+        XMLHttpRequestObject.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        XMLHttpRequestObject.send(params);
+
+        if(XMLHttpRequestObject.readyState == 4)
+        {                   
+            if(XMLHttpRequestObject.status == 200){                      
+               // obj.innerHTML = XMLHttpRequestObject.responseText;                  
+            }
+            else{                     
+                obj.innerHTML = 'some problem arise';  
+            }            
+        }
+    }
+}
+    
